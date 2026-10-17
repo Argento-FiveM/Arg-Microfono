@@ -46,7 +46,7 @@ Cuenta con un widget NUI de estética profesional *Glassmorphism* que muestra el
 
 1. Descarga o clona el repositorio dentro de tu carpeta `resources`:
    ```bash
-   git clone https://github.com/TU_USUARIO/Arg-Microfono.git
+   git clone https://github.com/Argento-FiveM/Arg-Microfono.git
    ```
 2. Asegúrate de que la carpeta se llame exactamente `Arg-Microfono`.
 3. Añade la siguiente línea en tu archivo `server.cfg` (después de tu recurso de voz):
@@ -107,4 +107,3 @@ local isActive = exports['Arg-Microfono']:IsMicActive()
 - **Comunidad / Crew:** FiveM AR
 - **Versión:** 1.0.0
 - **Fecha:** 17/10/2026
-
