@@ -1,0 +1,188 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: transparent;
+    font-family: 'Outfit', sans-serif;
+}
+
+.badge {
+    position: absolute;
+    bottom: 60px;
+    right: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 14px 7px 9px;
+    background: rgba(13, 17, 23, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1), transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.badge.hidden {
+    opacity: 0;
+    transform: translateX(12px);
+    pointer-events: none;
+}
+
+.icon-wrap {
+    position: relative;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(34, 197, 94, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+    flex-shrink: 0;
+}
+
+.badge.ptt .icon-wrap {
+    background: rgba(148, 163, 184, 0.12);
+}
+
+.icon {
+    width: 15px;
+    height: 15px;
+    stroke: #22c55e;
+    transition: stroke 0.2s ease;
+}
+
+.badge.ptt .icon {
+    stroke: #94a3b8;
+}
+
+.status-dot {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #22c55e;
+    border: 1.5px solid #0d1117;
+    box-shadow: 0 0 6px rgba(34, 197, 94, 0.6);
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.badge.ptt .status-dot {
+    background: #94a3b8;
+    box-shadow: none;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.name {
+    font-size: 11px;
+    font-weight: 700;
+    color: #f8fafc;
+    letter-spacing: 0.3px;
+    max-width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.2;
+}
+
+.status-row {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.label {
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    color: #22c55e;
+    text-transform: uppercase;
+}
+
+.badge.ptt .label {
+    color: #94a3b8;
+}
+
+.waves {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    height: 12px;
+}
+
+.waves span {
+    width: 2.5px;
+    height: 3px;
+    border-radius: 2px;
+    background: #22c55e;
+    transition: background 0.2s ease, opacity 0.2s ease;
+    animation: soundWaveProgressive 1.25s ease-in-out infinite;
+}
+
+.waves span:nth-child(1) {
+    animation-delay: 0.0s;
+}
+
+.waves span:nth-child(2) {
+    animation-delay: 0.16s;
+}
+
+.waves span:nth-child(3) {
+    animation-delay: 0.32s;
+}
+
+.waves span:nth-child(4) {
+    animation-delay: 0.48s;
+}
+
+.waves span:nth-child(5) {
+    animation-delay: 0.64s;
+}
+
+.badge.ptt .waves span {
+    background: #64748b;
+    animation: none !important;
+    height: 2.5px;
+    opacity: 0.4;
+}
+
+@keyframes soundWaveProgressive {
+    0% {
+        height: 3px;
+        opacity: 0.35;
+    }
+    30% {
+        height: 11px;
+        opacity: 1;
+    }
+    55% {
+        height: 5px;
+        opacity: 0.7;
+    }
+    75% {
+        height: 9px;
+        opacity: 0.9;
+    }
+    100% {
+        height: 3px;
+        opacity: 0.35;
+    }
+}
